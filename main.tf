@@ -43,8 +43,8 @@ resource "aws_s3_bucket_public_access_block" "siem_lab" {
 resource "aws_s3_object" "sample_syslog" {
   bucket = aws_s3_bucket.siem_lab.id
   key    = "logs/sample-syslog.log"
-  source = "${path.module}/../sample-syslog.log"
-  etag   = filemd5("${path.module}/../sample-syslog.log")
+  source = "${path.module}/sample-syslog.log"
+  etag   = filemd5("${path.module}/sample-syslog.log")
 }
 
 resource "aws_iam_user" "lab_user" {
