@@ -4,7 +4,7 @@ Supporting resources for the **901-SIEM: Detect and Investigate a Breach** Instr
 
 This repository hosts the log data and infrastructure configuration consumed by the lab during student sessions. Files are fetched directly from GitHub at runtime — students do not interact with this repository.
 
-nathan mitchell 25th June 2026
+Nathan Mitchell 25th June 2026
 
 ---
 
